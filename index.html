@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+   
+    <div class="container">
+        <h1 id="titulo"> Jogo da forca</h1>
+        <div id="imagem"></div>
+        <div id="palavraSecreta">
+            <div class="letras"></div>
+            <div class="letras"></div>
+            <div class="letras"></div>
+            <div class="letras"></div>
+        </div>
+    </div>
+    
+    <div class="teclado">
+        <div class="teclas">
+            <button id="teclaA" onclick="verificaLetraA">A</button>
+            <button id="teclaB" onclick="verificaLetraB">B</button>
+            <button id="teclaC" onclick="verificaLetraC">C</button>
+            <button id="teclaD" onclick="verificaLetraD">D</button>
+            <button id="teclaE" onclick="verificaLetraE">E</button>
+            <button id="teclaF" onclick="verificaLetraF">F</button>
+            <button id="teclaG" onclick="verificaLetraG">G</button>
+            <button id="teclaH" onclick="verificaLetraH">H</button>
+            <button id="teclaI" onclick="verificaLetraI">I</button>
+            
+        </div>
+        <div class="teclas">
+            <button id="teclaJ" onclick="verificaLetraJ">J</button>
+            <button id="teclaK" onclick="verificaLetraK">K</button>
+            <button id="teclaL" onclick="verificaLetraL">L</button>
+            <button id="teclaM" onclick="verificaLetraM">M</button>
+            <button id="teclaN" onclick="verificaLetraN">N</button>
+            <button id="teclaO" onclick="verificaLetraO">O</button>
+            <button id="teclaP" onclick="verificaLetraP">P</button>
+            <button id="teclaQ" onclick="verificaLetraQ">Q</button>
+            <button id="teclaR" onclick="verificaLetraR">R</button>
+        </div>
+        <div class="teclas">
+            <button id="teclaS" onclick="verificaLetraS">S</button>
+            <button id="teclaT" onclick="verificaLetraT">T</button>
+            <button id="teclaU" onclick="verificaLetraU">U</button>
+            <button id="teclaV" onclick="verificaLetraV">V</button>
+            <button id="teclaW" onclick="verificaLetraW">W</button>
+            <button id="teclaX" onclick="verificaLetraX">X</button>
+            <button id="teclaY" onclick="verificaLetraY">Y</button>
+            <button id="teclaZ" onclick="verificaLetraZ">Z</button>
+          
+        </div>
+            <button id="reiniciar">reiniciar</button>
+        </div>
+        
+    <script>
+
+        fetch('palavra.json')
+            .then(response => response.json())
+            .then(data => {
+                palavrasJson = data;
+            })
+            
+    </script>
+</body>
+</html>
