@@ -9,78 +9,96 @@
 body{
     width: 100vw;
     height: 90vw;
-    margin-top: 20px;
-    background-color: bisque;
+    margin: 0 auto;
+    background-color: beige;
     font-family: 'Ubuntu', sans-serif;
-
+    display: flex;
+    flex-direction: row;
+    margin: 2vw;
 
 }
 
-.container{
+.div1 {
+    width: 75vw;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div2 {
+    width: 25vw;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.categorias {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;   
+}
+
+.placar {
+    display: flex;
     flex-direction: column;
-    
+    align-items: center; 
+}
+
+#titulo, #tituloPlacar, #tituloCat
+{
+    padding: 25px;
     
 }
 
-#titulo{
-    padding-top: 25px;
-}
+
 
 #imagem{
-    background-image: url('../image/forca.png');
+    background-image: url('../assets/forca.png');
     width: 234px;
     height: 272px;
     background-repeat: no-repeat;
     margin-top: 25px;
-    
-}
-
-#palavraSecreta{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    font-size: 1em;
-    margin-top: 30px;
-    
 }
 
-.letras {
-    width: 16px;
+ 
+#letras {
+   
     text-align: center;
-    border-bottom: 2px solid rgb(6, 22, 1);
-    color: #ffff;
-    margin-left: 2px;
-    margin-right: 2px;
-}
+    color: black;
+    letter-spacing: 5px;
+    font-size: 40px;
+   
+} 
 
 .teclado{
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
+    
    
     
 }
 
 .teclas button {
     
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     margin: 2px;
     margin-top: 5px;
     cursor: pointer;
-    box-shadow: 0px 2px 8px dimgray;
+    box-shadow: 0px 1px 2px dimgray;
     border: 1px solid dimgray;
     border-radius: 5px;
-    color: fuchsia;
-    background-color: blue;
+    color:grey; 
+    background-color: white;
     font-size: 25px;
     font-weight: bold;
     
@@ -97,16 +115,16 @@ body{
 }
 
 #btnAcao{
-    width: 70px;
-    height: 24px;
+    width: 150px;
+    height: 40px;
     margin: 2px;
     margin-top: 5px;
     cursor: pointer;
-    box-shadow: 0px 2px 8px dimgray;
+    box-shadow: 0px 1px 2px dimgray;
     border: 1px solid dimgray;
     border-radius: 5px;
-    color: red;
-    background-color: aqua;
+    color: grey;
+    background-color: greenyellow;
     font-size: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
