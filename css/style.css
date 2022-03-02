@@ -8,13 +8,14 @@
 
 body{
     width: 100vw;
-    height: 90vw;
+    height: 40vw;
     margin: 0 auto;
     background-color: beige;
     font-family: 'Ubuntu', sans-serif;
     display: flex;
     flex-direction: row;
     margin: 2vw;
+    justify-content: center;
 
 }
 
@@ -46,6 +47,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center; 
+    border: 1px solid black;
 }
 
 #titulo, #tituloPlacar, #tituloCat
@@ -128,6 +130,7 @@ body{
     font-size: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
+
 
 
 
