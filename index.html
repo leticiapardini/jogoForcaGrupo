@@ -10,19 +10,15 @@
 </head>
 
 <body>
-    
-
     <div class="div1">
-
-        <div >
+        <div>
             <h1 id="titulo"> JOGO DA FORCA</h1>
             <div id="imagem"></div>
         </div>
-    
+
         <div id="palavraSecreta">
             <div id="letras"></div>
         </div>
-            
         <div class="teclado" id="divTeclado">
             <div class="teclas">
                 <button id="teclaQ" onclick="verificaLetra('Q')">Q</button>
@@ -35,7 +31,7 @@
                 <button id="teclaI" onclick="verificaLetra('I')">I</button>
                 <button id="teclaO" onclick="verificaLetra('O')">O</button>
                 <button id="teclaP" onclick="verificaLetra('P')">P</button>
-    
+
             </div>
             <div class="teclas">
                 <button id="teclaA" onclick="verificaLetra('A')">A</button>
@@ -56,26 +52,23 @@
                 <button id="teclaB" onclick="verificaLetra('B')">B</button>
                 <button id="teclaN" onclick="verificaLetra('N')">N</button>
                 <button id="teclaM" onclick="verificaLetra('M')">M</button>
-               
-    
             </div>
             <button id="btnAcao" onclick="acaoJogo()">INICIAR JOGO</button>
         </div>
     </div>
-            
     <div class="div2">
         <div class="placar">
             <h2 id="tituloPlacar">Placar</h2>
             <p>Vitoria</p>
             <p id="vitoria"></p> <br>
-            <p >Derrota</p>
+            <p>Derrota</p>
             <p id="derrota"></p>
         </div>
-       <br> <br> <br> 
+        <br> <br> <br>
         <div class="categorias">
             <h2 id="tituloCat"> Categoria</h2>
             <div id="todasCategorias"></div>
-            <div id="categoria"> <br> <br> 
+            <div id="categoria"> <br> <br>
                 <p id="catSorteada">A categoria sorteada foi:</p>
                 <h2 id="lblCategoria"></h2>
             </div>
@@ -83,7 +76,7 @@
     </div>
 
     <script>
-         let palavrasJson = "";
+        let palavrasJson = "";
         let letrasDigitadas = new Array();
         let erro = 0;
         let acerto = 0;
@@ -99,13 +92,13 @@
             .then(data => {
                 palavrasJson = data;
                 carregaCategorias(palavrasJson)
-            })
+            });
 
         function carregaCategorias(jsonPalavras) {
-            objTodasCategorias = document.getElementById("todasCategorias")
+            objTodasCategorias = document.getElementById("todasCategorias");
             Object.keys(palavrasJson).forEach(cat => {
-                objTodasCategorias.innerHTML += `<input type="checkbox" id="${cat}" name="${cat}">`
-                objTodasCategorias.innerHTML += `<label for="${cat}">${cat}</label><br>`
+                objTodasCategorias.innerHTML += `<input type="checkbox" id="${cat}" name="${cat}">`;
+                objTodasCategorias.innerHTML += `<label for="${cat}">${cat}</label><br>`;
             });
         }
 
@@ -120,36 +113,32 @@
 
                 if (categoriasSelecionadas.length == 0) {
                     alert("Pelo menos uma categoria deve ser selecionada!")
-                    return
+                    return;
                 }
 
                 [categoria, palavra] = sorteiaPalavra(categoriasSelecionadas);
 
                 // cria a variavel com '_' para que seja exibida na tela
 
-                palavraExibicao = new Array(palavra.length +1).join("_");
+                palavraExibicao = new Array(palavra.length + 1).join("_");
                 document.getElementById("letras").innerHTML = palavraExibicao;
-
-                 // Atualiza a imagem da forca
-                 atualizaImagemForca(0);
 
                 document.getElementById("lblCategoria").innerHTML = categoria;
                 document.getElementById("btnAcao").innerHTML = "Desistir Jogo";
-                jogoIniciado = true
+                jogoIniciado = true;
             }
         }
-                
+
         function verificaCategoriaSelecionada() {
             let categoriasSelecionadas = [];
             Object.keys(palavrasJson).forEach(cat => {
                 if (document.getElementById(cat).checked == true)
-                //mando o indice da categoria selecionada para o meu objeto
+                    //mando o indice da categoria selecionada para o meu objeto
                     categoriasSelecionadas.push(Object.keys(palavrasJson).indexOf(cat));
             });
 
-            return categoriasSelecionadas
+            return categoriasSelecionadas;
         }
-
 
         function sorteiaPalavra(categoriasSelecionadas) {
             indiceCategoria = Math.floor(Math.random() * categoriasSelecionadas.length);
@@ -162,7 +151,6 @@
             return [categoria, palavraSorteada];
         }
 
-
         function verificaLetra(letra) {
             //se o jogo não for iniciado ele não consegue digitar letras
             if (jogoIniciado == false)
@@ -172,21 +160,16 @@
             let tam = palavra.length;
 
             // acrescentando o parâmetro de quantidade de acertos que foi utilizada na função
-            desabilitaBotao(letra, quantidadeAcertos)
-
-            letrasDigitadas.push(letra)
+            desabilitaBotao(letra, quantidadeAcertos);
+            letrasDigitadas.push(letra);
 
             if (quantidadeAcertos >= 1) {
                 acerto = acerto + quantidadeAcertos;
-                substituiLetraExibicao(letra,quantidadeAcertos);
-                
+                substituiLetraExibicao(letra, quantidadeAcertos);
             } else {
                 erro++;
                 atualizaImagemForca(erro);
-                
-
             }
-
 
             if (erro == numeroChances) {
                 alert(`Você perdeu o jogo, a palvra era: ${palavra}`);
@@ -203,15 +186,13 @@
 
         }
 
-        function substituiLetraExibicao(letra){
+        function substituiLetraExibicao(letra) {
 
             //Percorre toda a palavra e substitui as letras que o usuario digitou
-            for(let i=0; i<palavra.length; i++){
-                if(palavra[i] == letra){
-
+            for (let i = 0; i < palavra.length; i++) {
+                if (palavra[i] == letra) {
                     //Separa a parte antes da letra e depois da letra digitada pelo usuario com base no indice
-
-                    palavraExibicao = palavraExibicao.substring(0,i) + letra + palavraExibicao.substring(i + 1);
+                    palavraExibicao = palavraExibicao.substring(0, i) + letra + palavraExibicao.substring(i + 1);
                 }
             }
 
@@ -222,16 +203,16 @@
         function fimJogo(vitoria) {
 
             if (vitoria)
-                placarVitoria++
+                placarVitoria++;
             else
-                placarDerrota++
+                placarDerrota++;
 
             document.getElementById("vitoria").innerHTML = placarVitoria;
             document.getElementById("derrota").innerHTML = placarDerrota;
 
             //preparação para próxima rodada do jogo
             letrasDigitadas.forEach(letra => {
-                habilitaBotao(letra)
+                habilitaBotao(letra);
             });
 
             document.getElementById("letras").innerHTML = "";
@@ -245,30 +226,26 @@
             erro = 0;
             acerto = 0;
             atualizaImagemForca(0);
-            document.getElementById("btnAcao").innerHTML = "Iniciar Jogo"
+            document.getElementById("btnAcao").innerHTML = "Iniciar Jogo";
         }
 
         function habilitaBotao(letra) {
-            document.getElementById(`tecla${letra}`).disabled = false
-            document.getElementById(`tecla${letra}`).style.background = "white"
+            document.getElementById(`tecla${letra}`).disabled = false;
+            document.getElementById(`tecla${letra}`).style.background = "white";
             document.getElementById(`tecla${letra}`).style.color = "grey";
         }
 
         function desabilitaBotao(letra, quantidadeAcertos) {
-            
-            document.getElementById(`tecla${letra}`).disabled = true
 
+            document.getElementById(`tecla${letra}`).disabled = true;
             // condicao para as cores dos acertos e erros ser diferente
-            if ( quantidadeAcertos > 0){
+            if (quantidadeAcertos > 0) {
                 document.getElementById(`tecla${letra}`).style.background = "green";
                 document.getElementById(`tecla${letra}`).style.color = "white";
-                
-            } else{
+            } else {
                 document.getElementById(`tecla${letra}`).style.background = "red";
                 document.getElementById(`tecla${letra}`).style.color = "white";
             }
-            
-            
         }
 
         function atualizaImagemForca(qtErro) {
@@ -304,13 +281,8 @@
 
 </html>
 
-            
-           
 
 
 
 
 
-    
-
-    
