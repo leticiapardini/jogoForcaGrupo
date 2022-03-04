@@ -124,7 +124,7 @@
                 document.getElementById("letras").innerHTML = palavraExibicao;
 
                 document.getElementById("lblCategoria").innerHTML = categoria;
-                document.getElementById("btnAcao").innerHTML = "Desistir Jogo";
+                document.getElementById("btnAcao").innerHTML = "DESISTIR";
                 jogoIniciado = true;
             }
         }
@@ -225,10 +225,9 @@
             categoria = "";
             erro = 0;
             acerto = 0;
-            document.getElementById("btnAcao").innerHTML = "Iniciar Jogo";
+            document.getElementById("btnAcao").innerHTML = "INICIAR JOGO";
         }
             
-
         function habilitaBotao(letra) {
             document.getElementById(`tecla${letra}`).disabled = false;
             document.getElementById(`tecla${letra}`).style.background = "white";
@@ -274,12 +273,14 @@
                     break;
             }
         }
-
-
     </script>
 </body>
-
 </html>
+
+
+
+
+
 
 
 
