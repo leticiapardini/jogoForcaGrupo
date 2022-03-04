@@ -234,7 +234,7 @@
                 habilitaBotao(letra)
             });
 
-            
+            document.getElementById("letras").innerHTML = "";
             document.getElementById("lblCategoria").innerHTML = "";
             Object.keys(palavrasJson).forEach(cat => { document.getElementById(cat).checked = false });
 
