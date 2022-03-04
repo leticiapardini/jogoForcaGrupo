@@ -9,7 +9,7 @@
 
     " Linguagens de Programação" : ["javascript", "python", "ruby", "php", "rust"],
 
-    " futras": ["banana", "morango","laranja","abacaxi", "pera"],
+    " frutras": ["banana", "morango","laranja","abacaxi", "pera"],
 
     " cores": ["azul","verde","vermelho","amarelo","preto"]
 }
