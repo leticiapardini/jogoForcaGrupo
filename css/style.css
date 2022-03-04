@@ -140,14 +140,14 @@ body{
     
     body{
         width: 10vw;
-        min-width: 10vw;
+        min-width:350px; ;
         height: 5vw;
         min-height: 10vw;
         margin: 0 auto;
         margin-top: 10px;
         background-color: beige;
         font-family: 'Ubuntu', sans-serif;
-        font-size: 11px;
+        font-size: 10px;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
@@ -155,7 +155,7 @@ body{
     
     .div1 {
         width: 90px;
-        min-width: 250px;
+        min-width: 260px;
         height: 39vw;
         min-height: 530px;
         display: flex;
@@ -166,7 +166,7 @@ body{
     
     .div2 {
         width: 20vw;
-        min-width: 98px;
+        min-width: 90px;
         height: 28vw;
         min-height: 430px;
         margin-top: 65px;
@@ -221,7 +221,7 @@ body{
     } 
     
     .teclado{
-        margin-top: 30px;
+        margin-top: 10px;
         width: 300px;
         min-width: 200px;
         display: flex;
@@ -230,9 +230,9 @@ body{
     }
     
     .teclas button { 
-        width: 25px;
-        height: 25px;
-        margin: 1.1px;
+        width: 19px;
+        height: 19px;
+        margin: 2.5px;
         margin-top: 1px;
         cursor: pointer;
         box-shadow: 0px 1px 2px dimgray;
@@ -257,7 +257,7 @@ body{
         width: 65px;
         height: 35px;
         margin: 1x;
-        margin-top: 5px;
+        margin-top: 4px;
         cursor: pointer;
         box-shadow: 0px 1px 2px dimgray;
         border: 1px solid dimgray;
@@ -265,6 +265,6 @@ body{
         color: grey;
         background-color: greenyellow;
         font-size: 'Ubuntu', sans-serif;
-        font-weight: bold;
+        font-weight: bolder;
     }
 }

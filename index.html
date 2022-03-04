@@ -115,7 +115,7 @@
                     alert("Pelo menos uma categoria deve ser selecionada!")
                     return;
                 }
-
+                atualizaImagemForca(0);
                 [categoria, palavra] = sorteiaPalavra(categoriasSelecionadas);
 
                 // cria a variavel com '_' para que seja exibida na tela
@@ -225,9 +225,9 @@
             categoria = "";
             erro = 0;
             acerto = 0;
-            atualizaImagemForca(0);
             document.getElementById("btnAcao").innerHTML = "Iniciar Jogo";
         }
+            
 
         function habilitaBotao(letra) {
             document.getElementById(`tecla${letra}`).disabled = false;
