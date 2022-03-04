@@ -67,17 +67,17 @@
         <div class="placar">
             <h2 id="tituloPlacar">Placar</h2>
             <p>Vitoria</p>
-            <p id="vitoria"></p>
-            <p>Derrota</p>
+            <p id="vitoria"></p> <br>
+            <p >Derrota</p>
             <p id="derrota"></p>
         </div>
-        <br><br><br>
+       <br> <br> <br> 
         <div class="categorias">
             <h2 id="tituloCat"> Categoria</h2>
             <div id="todasCategorias"></div>
-            <div id="categoria">
-                <p>A categoria sorteada foi:</p>
-                <p id="lblCategoria"></p>
+            <div id="categoria"> <br> <br> 
+                <p id="catSorteada">A categoria sorteada foi:</p>
+                <h2 id="lblCategoria"></h2>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@
         let placarVitoria = 0;
         let placarDerrota = 0;
 
-        fetch('palavras.json')
+        fetch('./json/palavras.json')
             .then(response => response.json())
             .then(data => {
                 palavrasJson = data;
@@ -239,11 +239,12 @@
             Object.keys(palavrasJson).forEach(cat => { document.getElementById(cat).checked = false });
 
             jogoIniciado = false;
+            palavraExibicao = "";
             palavra = "";
             categoria = "";
             erro = 0;
             acerto = 0;
-
+            atualizaImagemForca(0);
             document.getElementById("btnAcao").innerHTML = "Iniciar Jogo"
         }
 
