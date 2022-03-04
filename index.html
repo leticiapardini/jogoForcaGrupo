@@ -63,17 +63,20 @@
             <p id="vitoria"></p> <br>
             <p>Derrota</p>
             <p id="derrota"></p>
-        </div>
-        <br> <br> <br>
+        </div><br><br><br>
         <div class="categorias">
-            <h2 id="tituloCat"> Categoria</h2>
-            <div id="todasCategorias"></div>
-            <div id="categoria"> <br> <br>
-                <p id="catSorteada">A categoria sorteada foi:</p>
-                <h2 id="lblCategoria"></h2>
+            <h2 id="tituloCat">Categorias</h2>
+            <div id="todasCategorias">
+                <div id="categoria"></div>
             </div>
+        </div><br><br>
+        <div>
+            <p id="catSorteada">A categoria sorteada foi:</p>
+            <h2 id="lblCategoria"></h2>
         </div>
     </div>
+
+
 
     <script>
         let palavrasJson = "";
@@ -227,7 +230,7 @@
             acerto = 0;
             document.getElementById("btnAcao").innerHTML = "INICIAR JOGO";
         }
-            
+
         function habilitaBotao(letra) {
             document.getElementById(`tecla${letra}`).disabled = false;
             document.getElementById(`tecla${letra}`).style.background = "white";
@@ -275,15 +278,5 @@
         }
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
